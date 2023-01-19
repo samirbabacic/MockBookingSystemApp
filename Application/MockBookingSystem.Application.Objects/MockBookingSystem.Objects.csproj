@@ -6,4 +6,8 @@
     <Nullable>disable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\MockBookingSystem.Core\MockBookingSystem.Core.csproj" />
+  </ItemGroup>
+
 </Project>

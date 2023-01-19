@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\MockBookingSystem.Application.Objects\MockBookingSystem.Objects.csproj" />
+    <ProjectReference Include="..\..\Application\MockBookingSystem.ServiceLayer\MockBookingSystem.ServiceLayer.csproj" />
+  </ItemGroup>
+
+</Project>

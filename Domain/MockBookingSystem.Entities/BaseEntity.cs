@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MockBookingSystem.Entities
 {
-    public class BaseEntity
+    public record BaseEntity
     {
-        public virtual object Id { get; set; } = Guid.NewGuid();
+        public virtual string Id { get; init; } = Guid.NewGuid().ToString();
     }
 }

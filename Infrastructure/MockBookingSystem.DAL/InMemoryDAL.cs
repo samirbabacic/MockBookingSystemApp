@@ -1,5 +1,6 @@
 ﻿using Mapster;
 using MockBookingSystem.Entities;
+using MockBookingSystem.Objects.DestinationOption;
 using MockBookingSystem.ServiceLayer.Contracts;
 using System.Collections.Concurrent;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace MockBookingSystem.DAL
 {
     public class InMemoryDAL : IDAL, IRegistrable
     {
-        private static readonly ConcurrentDictionary<string, ConcurrentDictionary<object, object>> KeyDictionaryCombinationsDictionary = new();
+        private static readonly ConcurrentDictionary<string, ConcurrentDictionary<string, object>> KeyDictionaryCombinationsDictionary = new();
 
         public async Task RegisterAsync()
         {
@@ -18,9 +19,9 @@ namespace MockBookingSystem.DAL
 
             var typesToAdd = assembly.GetTypes().Where(x => typeof(BaseEntity).IsAssignableFrom(x) && x != typeof(BaseEntity));
 
-            foreach(var type in typesToAdd)
+            foreach (var type in typesToAdd)
             {
-                KeyDictionaryCombinationsDictionary.TryAdd(type.FullName, new ConcurrentDictionary<object, object>());
+                KeyDictionaryCombinationsDictionary.TryAdd(type.FullName, new ConcurrentDictionary<string, object>());
             }
         }
 
@@ -47,34 +48,48 @@ namespace MockBookingSystem.DAL
             return objectsDictionary.Values.AsQueryable().Select(x => (T)x);
         }
 
-        public T GetById<T>(object id) where T : BaseEntity
+        public T GetById<T>(string id) where T : BaseEntity
         {
             KeyDictionaryCombinationsDictionary.TryGetValue(typeof(T).FullName, out var objectsDictionary);
-            
+
             objectsDictionary.TryGetValue(id, out var objectToReturn);
 
             return TypeAdapter.Adapt<T>(objectToReturn);
         }
 
-        public async void Insert<T>(T entity) where T : BaseEntity
+        public void Insert<T>(T entity) where T : BaseEntity
         {
             KeyDictionaryCombinationsDictionary.TryGetValue(typeof(T).FullName, out var objectsDictionary);
 
             objectsDictionary.TryAdd(entity.Id, entity);
         }
 
-        public async void Replace<T>(T entity) where T : BaseEntity
+        public void Replace<T>(T entity) where T : BaseEntity
         {
             KeyDictionaryCombinationsDictionary.TryGetValue(typeof(T).FullName, out var objectsDictionary);
-            
+
             objectsDictionary.TryGetValue(entity.Id, out var objectToUpdate);
             objectsDictionary.TryUpdate(entity.Id, entity, objectToUpdate);
         }
-        public async void Delete<T>(object objectId)
+        public void Delete<T>(string objectId) where T : BaseEntity
         {
             KeyDictionaryCombinationsDictionary.TryGetValue(typeof(T).FullName, out var objectsDictionary);
 
             objectsDictionary.TryRemove(objectId, out var objectToDelete);
+        }
+
+        public void AddOrUpdate<T>(T entity) where T : BaseEntity
+        {
+            KeyDictionaryCombinationsDictionary.TryGetValue(typeof(T).FullName, out var objectsDictionary);
+
+            if (objectsDictionary.ContainsKey(entity.Id))
+            {
+                objectsDictionary.TryGetValue(entity.Id, out var objectToUpdate);
+                objectsDictionary.TryUpdate(entity.Id, entity, objectToUpdate);
+                return;
+            }
+
+            objectsDictionary.TryAdd(entity.Id, entity);
         }
     }
 }

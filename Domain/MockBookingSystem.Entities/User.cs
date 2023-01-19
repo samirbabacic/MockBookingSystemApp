@@ -1,9 +1,9 @@
 ﻿namespace MockBookingSystem.Entities
 {
-    public class User : BaseEntity
+    public record User : BaseEntity
     {
-        public string Username { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string Username { get; init; }
+        public byte[] PasswordHash { get; init; }
+        public byte[] PasswordSalt { get; init; }
     }
 }

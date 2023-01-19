@@ -1,7 +1,8 @@
 ﻿namespace MockBookingSystem.Core
 {
-    public class ClientSettings
+    public sealed record ClientSettings
     {
-        public string JwtTokenKey { get; set; }
+        public string JwtTokenKey { get; init; }
+        public string TripxAPI { get; set; }
     }
 }
