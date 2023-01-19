@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{21191F40
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{01E85EF2-D1BA-407B-8C32-D0FCDA8FA952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystemAPI", "API\MockBookingSystemAPI\MockBookingSystemAPI\MockBookingSystemAPI.csproj", "{5DA48FCB-6B67-43D2-9CF8-82DF69570E4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystemAPI", "API\MockBookingSystemAPI\MockBookingSystemAPI\MockBookingSystemAPI.csproj", "{5DA48FCB-6B67-43D2-9CF8-82DF69570E4B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{3E783FC7-7713-45E4-96C9-CAB28B291528}"
 EndProject
@@ -17,17 +17,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{FD9157
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastrucutre", "Infrastrucutre", "{C7DD16F8-40CA-4347-A335-9E423D21B31C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.Entities", "Domain\MockBookingSystem.Entities\MockBookingSystem.Entities.csproj", "{2F9A71FF-53ED-4D50-A37B-793DC8B0EC92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.Entities", "Domain\MockBookingSystem.Entities\MockBookingSystem.Entities.csproj", "{2F9A71FF-53ED-4D50-A37B-793DC8B0EC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.Objects", "Application\MockBookingSystem.Application.Objects\MockBookingSystem.Objects.csproj", "{E4DF7082-0AD3-4EDB-B255-D34118DB9957}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.Objects", "Application\MockBookingSystem.Application.Objects\MockBookingSystem.Objects.csproj", "{E4DF7082-0AD3-4EDB-B255-D34118DB9957}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.AccountManager", "Infrastructure\MockBookingSystem.Infrastructure\MockBookingSystem.AccountManager.csproj", "{4635B8E2-EB3F-40B7-9DCF-CC0925D81776}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.ServiceLayer", "Application\MockBookingSystem.ServiceLayer\MockBookingSystem.ServiceLayer.csproj", "{45C1C1A1-A230-4199-BF77-01958CAF5D5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.ServiceLayer", "Application\MockBookingSystem.ServiceLayer\MockBookingSystem.ServiceLayer.csproj", "{45C1C1A1-A230-4199-BF77-01958CAF5D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.Core", "Domain\MockBookingSystem.Core\MockBookingSystem.Core.csproj", "{A11F8CB4-BB21-471B-8660-F18B6792430F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.Core", "Domain\MockBookingSystem.Core\MockBookingSystem.Core.csproj", "{A11F8CB4-BB21-471B-8660-F18B6792430F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.Tests.ServiceLayer", "Tests\ServiceLayer\BookingSystem.Tests.ServiceLayer\BookingSystem.Tests.ServiceLayer.csproj", "{5728E16A-4568-4B6A-A9D7-0256F3E29345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBookingSystem.DAL", "..\MockBookingSystem.DAL\MockBookingSystem.DAL.csproj", "{BE0341D4-7B53-4E8B-AB12-3F32E98949B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.DAL", "Infrastructure\MockBookingSystem.DAL\MockBookingSystem.DAL.csproj", "{4E304659-59C4-411F-B69E-78ED23D19A65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBookingSystem.AccountManager", "Infrastructure\MockBookingSystem.AccountManager\MockBookingSystem.AccountManager.csproj", "{C38B0552-CCC8-494C-948A-B1E8C803B9D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +49,6 @@ Global
 		{E4DF7082-0AD3-4EDB-B255-D34118DB9957}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DF7082-0AD3-4EDB-B255-D34118DB9957}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DF7082-0AD3-4EDB-B255-D34118DB9957}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4635B8E2-EB3F-40B7-9DCF-CC0925D81776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4635B8E2-EB3F-40B7-9DCF-CC0925D81776}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4635B8E2-EB3F-40B7-9DCF-CC0925D81776}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4635B8E2-EB3F-40B7-9DCF-CC0925D81776}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45C1C1A1-A230-4199-BF77-01958CAF5D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45C1C1A1-A230-4199-BF77-01958CAF5D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45C1C1A1-A230-4199-BF77-01958CAF5D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,10 +57,18 @@ Global
 		{A11F8CB4-BB21-471B-8660-F18B6792430F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A11F8CB4-BB21-471B-8660-F18B6792430F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A11F8CB4-BB21-471B-8660-F18B6792430F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE0341D4-7B53-4E8B-AB12-3F32E98949B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE0341D4-7B53-4E8B-AB12-3F32E98949B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE0341D4-7B53-4E8B-AB12-3F32E98949B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE0341D4-7B53-4E8B-AB12-3F32E98949B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5728E16A-4568-4B6A-A9D7-0256F3E29345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5728E16A-4568-4B6A-A9D7-0256F3E29345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5728E16A-4568-4B6A-A9D7-0256F3E29345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5728E16A-4568-4B6A-A9D7-0256F3E29345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E304659-59C4-411F-B69E-78ED23D19A65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E304659-59C4-411F-B69E-78ED23D19A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E304659-59C4-411F-B69E-78ED23D19A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E304659-59C4-411F-B69E-78ED23D19A65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38B0552-CCC8-494C-948A-B1E8C803B9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38B0552-CCC8-494C-948A-B1E8C803B9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38B0552-CCC8-494C-948A-B1E8C803B9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38B0552-CCC8-494C-948A-B1E8C803B9D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,10 +81,11 @@ Global
 		{C7DD16F8-40CA-4347-A335-9E423D21B31C} = {FFEE5644-25D6-43C0-B0A7-A292FFCD8C55}
 		{2F9A71FF-53ED-4D50-A37B-793DC8B0EC92} = {FD9157E0-C8D4-4299-9B25-4801512EE389}
 		{E4DF7082-0AD3-4EDB-B255-D34118DB9957} = {3E783FC7-7713-45E4-96C9-CAB28B291528}
-		{4635B8E2-EB3F-40B7-9DCF-CC0925D81776} = {C7DD16F8-40CA-4347-A335-9E423D21B31C}
 		{45C1C1A1-A230-4199-BF77-01958CAF5D5A} = {3E783FC7-7713-45E4-96C9-CAB28B291528}
 		{A11F8CB4-BB21-471B-8660-F18B6792430F} = {FD9157E0-C8D4-4299-9B25-4801512EE389}
-		{BE0341D4-7B53-4E8B-AB12-3F32E98949B2} = {C7DD16F8-40CA-4347-A335-9E423D21B31C}
+		{5728E16A-4568-4B6A-A9D7-0256F3E29345} = {21191F40-3C2F-49FE-B11F-61DE0C0525B0}
+		{4E304659-59C4-411F-B69E-78ED23D19A65} = {C7DD16F8-40CA-4347-A335-9E423D21B31C}
+		{C38B0552-CCC8-494C-948A-B1E8C803B9D3} = {C7DD16F8-40CA-4347-A335-9E423D21B31C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5B5B07EE-8D5F-45BE-8629-A83D8BD9201F}

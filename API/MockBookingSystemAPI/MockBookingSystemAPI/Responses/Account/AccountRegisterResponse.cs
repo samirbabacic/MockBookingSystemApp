@@ -1,7 +1,7 @@
 ﻿namespace MockBookingSystemAPI.Responses.Account
 {
-    public class AccountRegisterResponse
+    public sealed record AccountRegisterResponse
     {
-        public string Token { get; set; }
+        public string Token { get; init; }
     }
 }

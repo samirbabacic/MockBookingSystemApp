@@ -2,7 +2,7 @@
 
 namespace MockBookingSystemAPI.Requests.Account
 {
-    public class AccountRegisterRequest : UserModel
+    public sealed record AccountRegisterRequest : UserModel
     {
     }
 }

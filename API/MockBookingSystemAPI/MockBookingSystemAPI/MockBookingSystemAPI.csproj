@@ -15,10 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\MockBookingSystem.DAL\MockBookingSystem.DAL.csproj" />
     <ProjectReference Include="..\..\..\Application\MockBookingSystem.Application.Objects\MockBookingSystem.Objects.csproj" />
     <ProjectReference Include="..\..\..\Application\MockBookingSystem.ServiceLayer\MockBookingSystem.ServiceLayer.csproj" />
-    <ProjectReference Include="..\..\..\Infrastructure\MockBookingSystem.Infrastructure\MockBookingSystem.AccountManager.csproj" />
+    <ProjectReference Include="..\..\..\Domain\MockBookingSystem.Core\MockBookingSystem.Core.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\MockBookingSystem.AccountManager\MockBookingSystem.AccountManager.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\MockBookingSystem.DAL\MockBookingSystem.DAL.csproj" />
   </ItemGroup>
 
 </Project>
